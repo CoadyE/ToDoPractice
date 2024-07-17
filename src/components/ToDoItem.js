@@ -1,6 +1,6 @@
 import React from "react"
 
-const ToDoItem = (task, deleteTask,toggleCompleted) =>{
+const ToDoItem = ({task, deleteTask, toggleCompleted}) =>{
     const handleChange = () =>{
         toggleCompleted(task.id)
     }

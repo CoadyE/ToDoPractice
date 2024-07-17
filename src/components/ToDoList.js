@@ -14,14 +14,14 @@ const ToDoList = () => {
         setInputText('');
     }
 
-    const deleteTask = (id) => {
+    function deleteTask(id) {
         setTasks(tasks.filter(task => task.id != id))
     }
 
-    const toggleCompleted = (id) => {
+    function toggleCompleted(id) {
         setTasks(tasks.map(task => {
             if (id === task.id) {
-                return { ...task, completed: !task.completed }
+                return { ...task, completed: !task.completed}
             }
             else {
                 return task;
@@ -31,18 +31,18 @@ const ToDoList = () => {
 
     return (
         <div className="todo-list">
-            {tasks.map(task => {
+            {tasks.map(task => (
                 <ToDoItem 
                 key={task.id} 
                 task={task} 
-                toggleCompleted={toggleCompleted} 
-                deleteTask={deleteTask} />
-            })}
+                deleteTask={deleteTask}
+                toggleCompleted={toggleCompleted}  />
+            ))}
             <input
                 value={inputText}
                 onChange={e => setInputText(e.target.value)}
             />
-            <button onClick={() => addTask(inputText)}>Add</button>
+            <button onClick={() => {console.log(tasks); addTask(inputText)}}>Add</button>
         </div>
     )
 }

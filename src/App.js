@@ -1,6 +1,4 @@
 import './App.css';
-import MyComponent from './components/MyComponent'
-import MyButton from './components/Button'
 import ToDoList from './components/ToDoList'
 import React, { useState } from "react"
 
