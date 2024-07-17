@@ -1,4 +1,5 @@
 import './App.css';
+import MyComponent from './MyComponent'
 
 function MyButton() {
   return (
@@ -13,6 +14,7 @@ function MyButton() {
     <h1>
       Welcome to my app
     </h1>
+    <MyComponent/>
     <MyButton />
   </div>
   );
