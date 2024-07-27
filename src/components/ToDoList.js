@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ToDoItem from './ToDoItem'
+import { TextField, Button } from '@mui/material'
 
 const ToDoList = () => {
     const [tasks, setTasks] = useState([])
@@ -36,6 +37,8 @@ const ToDoList = () => {
                 onChange={e => setInputText(e.target.value)}
             />
             <button onClick={() => { console.log(tasks); addTask(inputText) }}>Add</button>
+     <TextField id="outlined-basic" label="To Do" variant="outlined"></TextField>
+     <Button onClick={() => { console.log(tasks); addTask(inputText) }}>Add Task</Button>
             {tasks.map(task => (
                 <ToDoItem
                     key={task.id}

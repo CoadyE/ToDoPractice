@@ -1,20 +1,23 @@
-import React from "react"
+import * as  React from 'react';
+import Button from '@mui/material/Button';
 
-const ToDoItem = ({task, deleteTask, toggleCompleted}) =>{
-    const handleChange = () =>{
-        toggleCompleted(task.id)
+function TodoItem({ task, deleteTask, toggleCompleted }) {
+    function handleChange() {
+        toggleCompleted(task.id);
     }
-    return(
-        <div className = "todo-item">
-            <input 
-            type="checkbox"
-            checked={task.completed}
-            onChange={handleChange}
-            />
-            <p>{task.inputText}</p>
-            <button onClick={()=>deleteTask(task.id)}>X</button>
-        </div>
-    )
-}
 
-export default ToDoItem
+    return (
+        <div className="todo-item">
+            <input
+                type="checkbox"
+                checked={task.completed}
+                onChange={handleChange}
+            />
+            <p>{task.text}</p>
+            <Button variant="contained" onClick={() => deleteTask(task.id)}>
+                X
+            </Button>
+        </div>
+    );
+}
+export default TodoItem;
